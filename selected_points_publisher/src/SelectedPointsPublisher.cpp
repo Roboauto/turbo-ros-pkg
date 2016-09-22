@@ -204,7 +204,7 @@ int SelectedPointsPublisher::_processSelectedAreaAndFindPoints()
     rviz::SelectionManager* sel_manager = context_->getSelectionManager();
     rviz::M_Picked selection = sel_manager->getSelection();
     rviz::PropertyTreeModel *model = sel_manager->getPropertyModel();
-    int num_points = model->rowCount();
+    int num_points = selection.size();
     ROS_INFO_STREAM_NAMED( "SelectedPointsPublisher._processSelectedAreaAndFindPoints", "Number of points in the selected area: " << num_points);
 
     // Generate a ros point cloud message with the selected points in rviz
